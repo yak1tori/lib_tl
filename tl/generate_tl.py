@@ -1524,7 +1524,7 @@ enum {\n\
 ' + factories + '\n\
 ' + ('} // namespace ' + globalNamespace + '\n' if globalNamespace != '' else '')
 
-  # --- AyuGram hook
+  # --- DiveGram hook
   header = header.replace('''	[[nodiscard]] bool is_noforwards() const;''', '''	[[nodiscard]] bool is_noforwards() const;\n	[[nodiscard]] bool is_ayuNoforwards() const;''')
   header = header.replace('''	[[nodiscard]] bool is_restricted() const;''', '''	[[nodiscard]] bool is_restricted() const;\n	[[nodiscard]] bool is_ayuRestricted() const;''')
 
@@ -1548,7 +1548,7 @@ public:\n\
 ' + methods + '\n\
 ' + ('} // namespace ' + globalNamespace + '\n' if globalNamespace != '' else '')
 
-  # --- AyuGram hook
+  # --- DiveGram hook
   rrr1 = re.compile(r'''bool MTPD(?P<class>.+?)::is_noforwards\(\) const {
 	return _flags\.v & Flag::f_noforwards;
 }''')
